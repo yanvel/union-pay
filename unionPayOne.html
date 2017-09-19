@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, initial-scale=1">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>银联支付</title>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <style>
+    body {
+      background: #f3f3f3;
+    }
+
+    .pay-section {
+      background: #fff;
+      color: #3fbcef;
+      font-size: 18px;
+      text-align: center;
+      height: 215px;
+    }
+
+    .pay-section img {
+      margin: 50px auto 5px;
+      width: 66px;
+    }
+
+    .pay-section span {
+      display: block;
+    }
+
+    .pay-section em {
+      font-style: normal;
+    }
+
+    .hide {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+<section class="pay-section">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIUAAACFCAYAAAB12js8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MzZkMWEyMi00MDBiLTRhNGMtYjU1Yi1hODNiMDEyNjJmMjkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUY0MjBGNTA5Q0U0MTFFN0EzNkVDOEMyNUM5MEE0M0EiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUY0MjBGNEY5Q0U0MTFFN0EzNkVDOEMyNUM5MEE0M0EiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDFjOGE1ZDAtYzUyMi1lZDQ2LWEzNGUtM2E5ZDA4OWQyODNjIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTg3MGFhMzYtOWNkZS0xMWU3LWJkNzEt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" alt="前往银联支付...">
+  <span><em>正在前往银联支付...</em></span>
+</section>
+
+<div id="toPay" class="hide"></div>
+
+<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      url: 'http://121.196.203.137:8080/jeeplus/collection/pay',
+      dataType: 'json',
+      contentType: 'application/json;charset=utf-8',
+      type: 'post',
+      data: JSON.stringify({
+        collectionAmount: "100",
+        bankCrad: '6216613000003689911'
+      }),
+      success: function (result) {
+        if(result.success){
+          $("#toPay").html(result.body.respMessage);
+          $("#from").submit();
+        }
+      }
+    });
+  });
+
+  function getParameter(name) {
+    let result = window.location.search.substr(1).match(new RegExp("(^|&)" + name + "=([^&]*)(&|$)"));
+    if (result !== null) {
+      return unescape(result[2])
+    } else {
+      return null;
+    }
+  }
+
+</script>
+</body>
+</html>
